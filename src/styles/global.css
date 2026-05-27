@@ -275,7 +275,7 @@ aside.toc li.active::before {
 
 .audio-block {
   margin-bottom: 3rem;
-  padding: 1rem 1.4rem;
+  padding: 0.8rem 0 0;
   border: 1px solid var(--rule);
   background: var(--bg-alt);
 }
@@ -286,7 +286,8 @@ aside.toc li.active::before {
   letter-spacing: 0.15em;
   color: var(--red);
   font-weight: 700;
-  margin-bottom: 0.8rem;
+  padding: 0 1rem;
+  margin-bottom: 0.4rem;
 }
 
 .reader-header {
@@ -500,8 +501,11 @@ aside.toc li.active::before {
     letter-spacing: 0.01em;
   }
   .audio-block {
-    padding: 0.8rem 1rem;
+    padding: 0.6rem 0 0;
     margin-bottom: 2rem;
+  }
+  .audio-block .label {
+    padding: 0 0.8rem;
   }
   .site-footer {
     flex-direction: column;
