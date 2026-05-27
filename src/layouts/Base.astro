@@ -1,0 +1,65 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  showProgress?: boolean;
+  currentPage?: 'home' | 'mvp';
+}
+
+const {
+  title,
+  description = 'О свободе воли, гордыне, сострадании и том, что проходит через нас.',
+  showProgress = false,
+  currentPage = 'home',
+} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content={description} />
+<meta name="theme-color" content="#ffffff" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Что в тебе твоё?" />
+<title>{title}</title>
+<link rel="icon" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23c1272d'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='monospace' font-weight='700' font-size='20' fill='%23ffffff'%3E?%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+{showProgress && <div class="progress" id="progress-bar"></div>}
+<header class="topbar">
+  <span class="left">[ Издание · 0.1 ]</span>
+  <span class="center"><a href="/">Что в тебе твоё?</a></span>
+  <span class="right">
+    {currentPage !== 'home' && <a href="/" class="nav-link">[← На обложку]</a>}
+    {currentPage !== 'mvp' && <a href="/mvp" class="nav-link">[Читать →]</a>}
+  </span>
+</header>
+<slot />
+<footer class="site-footer">
+  <span>// thewhychain · v0.1</span>
+  <span>{new Date().getFullYear()}</span>
+</footer>
+{showProgress && (
+  <script is:inline>
+    (function() {
+      const bar = document.getElementById('progress-bar');
+      if (!bar) return;
+      function update() {
+        const scrolled = window.scrollY;
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = max > 0 ? (scrolled / max) * 100 : 0;
+        bar.style.width = pct + '%';
+      }
+      update();
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('resize', update);
+    })();
+  </script>
+)}
+</body>
+</html>
