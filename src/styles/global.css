@@ -421,7 +421,7 @@ aside.toc li.active::before {
   color: var(--muted);
 }
 
-/* Mobile */
+/* Tablet + mobile */
 @media (max-width: 900px) {
   .reader-layout {
     grid-template-columns: 1fr;
@@ -433,6 +433,7 @@ aside.toc li.active::before {
     border-bottom: 2px solid var(--rule);
     height: auto;
     overflow: visible;
+    padding: 1.5rem 1.5rem 2rem;
   }
   .content {
     padding: 2rem 1.5rem 6rem;
@@ -443,5 +444,71 @@ aside.toc li.active::before {
   .topbar {
     padding: 0.8rem 1rem;
   }
-  .topbar .nav-link { margin-left: 1rem; }
+  .topbar .nav-link { margin-left: 0.8rem; }
+  .prose h2 {
+    font-size: 1.2rem;
+    margin: 3rem 0 1.5rem;
+    scroll-margin-top: 60px;
+  }
+  .prose h3 { font-size: 1rem; }
+}
+
+/* Phone only */
+@media (max-width: 640px) {
+  .topbar {
+    padding: 0.7rem 0.9rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.05em;
+  }
+  .topbar .center {
+    display: none;
+  }
+  .topbar .nav-link { margin-left: 0; }
+  .cover {
+    padding: 2rem 1.2rem 5rem;
+  }
+  .cover h1 {
+    font-size: 1.85rem;
+    letter-spacing: 0.01em;
+  }
+  .cover .subtitle {
+    font-size: 0.85rem;
+  }
+  .cover .formula {
+    padding: 0.8rem 0 0.8rem 1rem;
+    font-size: 0.85rem;
+  }
+  .cover .lead {
+    font-size: 0.9rem;
+  }
+  .cover .cta {
+    display: block;
+    padding: 0.9rem 1rem;
+    text-align: center;
+    width: 100%;
+  }
+  .cover .meta-row {
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.7rem;
+  }
+  .content {
+    padding: 1.5rem 1.2rem 5rem;
+  }
+  .reader-header h1 {
+    font-size: 1.7rem;
+    letter-spacing: 0.01em;
+  }
+  .audio-block {
+    padding: 0.8rem 1rem;
+    margin-bottom: 2rem;
+  }
+  .site-footer {
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: center;
+    text-align: center;
+    padding: 1.2rem 1rem;
+    font-size: 0.65rem;
+  }
 }
