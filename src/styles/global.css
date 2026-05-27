@@ -138,6 +138,25 @@ button {
 
 .cover .formula p:last-child { margin-bottom: 0; }
 
+.cover .manifesto {
+  margin: 2.5rem 0 3rem;
+  padding: 1.4rem 0;
+  border-top: 2px solid var(--rule);
+  border-bottom: 2px solid var(--rule);
+}
+
+.cover .manifesto p {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.cover .manifesto p:last-child {
+  margin-bottom: 0;
+  color: var(--red);
+}
+
 .cover .lead {
   font-size: 1rem;
   margin-bottom: 1.4rem;
@@ -409,6 +428,107 @@ aside.toc li.active::before {
 
 .prose a:hover { text-decoration: none; }
 
+/* Manifest page */
+.manifesto-page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 4rem 3rem 8rem;
+}
+
+.manifesto-header {
+  margin-bottom: 4rem;
+  border-bottom: 2px solid var(--rule);
+  padding-bottom: 2rem;
+}
+
+.manifesto-header .ed-mark {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--red);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.6rem;
+}
+
+.manifesto-header h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+}
+
+.manifesto-header .lede {
+  font-size: 0.95rem;
+  color: var(--muted);
+  max-width: 38rem;
+  line-height: 1.6;
+}
+
+.manifesto-section {
+  margin-bottom: 3rem;
+}
+
+.manifesto-section h2 {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--red);
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dotted var(--rule-dotted);
+}
+
+.manifesto-section h2::before {
+  content: '// ';
+  color: var(--muted);
+}
+
+.manifesto-section ul {
+  list-style: none;
+}
+
+.manifesto-section li {
+  font-size: 1.05rem;
+  line-height: 1.55;
+  padding: 0.7rem 0;
+  border-bottom: 1px dotted var(--rule-dotted);
+}
+
+.manifesto-section li::before {
+  content: '— ';
+  color: var(--red);
+  font-weight: 700;
+  margin-right: 0.4rem;
+}
+
+.manifesto-section li:last-child {
+  border-bottom: none;
+}
+
+.manifesto-footer {
+  margin-top: 5rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--rule);
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.manifesto-footer p {
+  margin-bottom: 0.8rem;
+}
+
+.manifesto-footer .cta-row {
+  margin-top: 2rem;
+  justify-content: center;
+  display: flex;
+}
+
 /* Footer */
 .site-footer {
   border-top: 2px solid var(--rule);
@@ -464,7 +584,7 @@ aside.toc li.active::before {
   .topbar .center {
     display: none;
   }
-  .topbar .nav-link { margin-left: 0; }
+  .topbar .nav-link { margin-left: 0.6rem; }
   .cover {
     padding: 2rem 1.2rem 5rem;
   }
@@ -478,6 +598,13 @@ aside.toc li.active::before {
   .cover .formula {
     padding: 0.8rem 0 0.8rem 1rem;
     font-size: 0.85rem;
+  }
+  .cover .manifesto {
+    margin: 2rem 0 2.5rem;
+    padding: 1.2rem 0;
+  }
+  .cover .manifesto p {
+    font-size: 0.9rem;
   }
   .cover .lead {
     font-size: 0.9rem;
@@ -506,6 +633,19 @@ aside.toc li.active::before {
   }
   .audio-block .label {
     padding: 0 0.8rem;
+  }
+  .manifesto-page {
+    padding: 2.5rem 1.2rem 5rem;
+  }
+  .manifesto-header h1 {
+    font-size: 1.7rem;
+  }
+  .manifesto-header .lede {
+    font-size: 0.85rem;
+  }
+  .manifesto-section li {
+    font-size: 0.95rem;
+    padding: 0.6rem 0;
   }
   .site-footer {
     flex-direction: column;

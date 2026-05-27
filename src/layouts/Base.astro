@@ -5,12 +5,12 @@ interface Props {
   title: string;
   description?: string;
   showProgress?: boolean;
-  currentPage?: 'home' | 'mvp';
+  currentPage?: 'home' | 'mvp' | 'manifest';
 }
 
 const {
   title,
-  description = 'О свободе воли, гордыне, сострадании и том, что проходит через нас.',
+  description = 'Книга о свободе воли, гордыне, сострадании и том, что проходит через нас. Не про то, что свободы воли нет — про то, что делать с этим знанием.',
   showProgress = false,
   currentPage = 'home',
 } = Astro.props;
@@ -35,7 +35,8 @@ const {
   <span class="left">[ Издание · 0.1 ]</span>
   <span class="center"><a href="/">Что в тебе твоё?</a></span>
   <span class="right">
-    {currentPage !== 'home' && <a href="/" class="nav-link">[← На обложку]</a>}
+    {currentPage !== 'home' && <a href="/" class="nav-link">[← Обложка]</a>}
+    {currentPage !== 'manifest' && <a href="/manifest" class="nav-link">[Манифест]</a>}
     {currentPage !== 'mvp' && <a href="/mvp" class="nav-link">[Читать →]</a>}
   </span>
 </header>
