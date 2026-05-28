@@ -26,7 +26,6 @@ MVP markdown лежит в `src/content/kniga-mvp-v0.1.md`. Источник —
 - Astro 5 (static output)
 - marked для рендера markdown
 - JetBrains Mono (Google Fonts)
-- ElevenLabs AudioNative widget для аудио-версии (загружается на /mvp)
 
 ## Дизайн
 
